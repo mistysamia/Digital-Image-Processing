@@ -11,17 +11,17 @@ customSize = stripe * size;
 img1 = imresize(img1, [customSize customSize]);
 img2 = imresize(img2, [customSize customSize]);
 
-% Concate and Stripe the both images
+
 tempImage = img1;
 j=1;
-for i = customSize/2 : 1 : customSize
-    tempImage( 1:1:j,j, :) = img2(j ,customSize/2:1:i, :);
+for i = 1 : 1 : customSize/2
+    tempImage( 1:1:j,j, :) = img2(j ,1:1:i, :);
     j=j+1;
 end
 j=customSize/2+1;
-k=customSize;
+k=customSize/2+1;
 for i = customSize/2 : 1 : customSize
-    tempImage( 1:1:j,i, :) = img2(i ,customSize/2:1:k, :);
+    tempImage( 1:1:j,i, :) = img2(i ,1:1:k, :);
     j=j-1;
     k=k-1;
 end
