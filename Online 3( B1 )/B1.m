@@ -13,7 +13,7 @@ subplot(2,2,2);
 imshow(K);
 title('salt & pepper ');
 p2=K;
-[x,y]=size(p);
+[x,y]=size(K);
 p12=zeros(x,y);
 
 [m,n]=size(p2);
