@@ -1,16 +1,17 @@
 %Taking Input
-inImg=imread('input.jpg');
-inImg=rgb2gray(inImg);
+inImg=imread('angrybird.jpg');
 subplot(2,2,1);
 imshow(inImg);
 title('Original Image ');
 
+
+inImg=rgb2gray(inImg);
 L = imnoise(inImg,'salt & pepper');
 K=imbinarize(L);
 
 subplot(2,2,2);
 imshow(K);
-title('Salted ');
+title('salt & pepper ');
 p2=K;
 [x,y]=size(p);
 p12=zeros(x,y);
@@ -25,7 +26,7 @@ for s=2:m-1
 end
 subplot(2,2,3);
 imshow(p12);
-title('opening of image');
+title('Removed Noise');
 
 
 for s=2:m-1
@@ -40,4 +41,4 @@ for s=2:m-1
 end
 subplot(2,2,4);
 imshow(p12);
-title('opening of image');
+title('Dimished Outline');
